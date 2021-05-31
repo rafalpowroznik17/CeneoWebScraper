@@ -3,8 +3,8 @@
 {% block middle %}
     <h2>Produkty</h2>
     <ul class="list-group">
-        {% block for product in products %}
-            <li class="list-group-item"><a href="{{ url_for('product', productId=32549235) }}">{{ product }}</a></li>
-        {% endblock for product in products %}
+        {% for product in products %}
+            <li class="list-group-item"><a href="{{ url_for('product', productId=product) }}">{{product}}</a></li>
+        {% endfor %}
     </ul>
 {% endblock middle %}   

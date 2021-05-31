@@ -1,6 +1,7 @@
 from app import app
 from app.models.product import Product
 from flask import render_template, redirect, url_for
+from os import listdir
 
 @app.route('/')
 @app.route('/index')
@@ -18,7 +19,7 @@ def extract(productId):
 @app.route('/products')
 def products():
     products = [product.split('.')[0] for product in listdir("app/products")]
-    return render_template("products.html.jinja", product=str(product))
+    return render_template("products.html.jinja", products=products)
 
 @app.route('/about')
 def about():
