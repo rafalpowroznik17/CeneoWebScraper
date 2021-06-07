@@ -1,5 +1,15 @@
 {% extends "layout.html.jinja" %}
 {% block middle %}
-    <h2>to jest plik product</h2>
-    <div>{{ product }}</div>
-{% endblock middle %}   
+    <h2>{{ productName }}</h2>
+    {#<div>{{ product }}</div>#}
+    <table class="table table-striped">
+
+    </table>
+{% endblock middle %}
+{% block scripts %}
+    <script>
+        $(document).ready( function () {
+            $('#opinions').DataTable();
+        } );
+    </script>
+{% endblock scripts %}   
